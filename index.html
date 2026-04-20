@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu Concours - 20 Ans Pizza Mi</title>
+    <style>
+        :root {
+            --primary-green: #39FF14; /* Vert vif du camion */
+            --dark-grey: #2F2F2F;    /* Gris anthracite du camion */
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-grey);
+            color: var(--white);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #3d3d3d;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            width: 90%;
+            max-width: 500px;
+            border-top: 8px solid var(--primary-green);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            box-sizing: border-box; /* Important pour les tablettes */
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .checkbox-group input {
+            margin-right: 12px;
+            margin-top: 4px;
+            transform: scale(1.5);
+        }
+
+        .checkbox-group a {
+            color: var(--primary-green);
+            text-decoration: underline;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-green);
+            color: black;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        button:active {
+            transform: scale(0.98);
+            background-color: #32CD32;
+        }
+
+        .prizes-mention {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.85em;
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>20 ANS PIZZA MI !</h1>
+    <p class="subtitle">Tentez de gagner +500€ de cadeaux</p>
+
+    <form action="#" method="POST">
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+        </div>
+
+        <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="votre@email.com">
+        </div>
+
+        <div class="form-group">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" name="tel" required placeholder="06 00 00 00 00">
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="purchase" name="purchase" required>
+            <label for="purchase">Je confirme avoir acheté une pizza aujourd'hui (1 participation par pizza).</label>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">Je suis majeur et j'accepte le <a href="https://pizzami.fr/jeu-concours" target="_blank">règlement du jeu</a>.</label>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="newsletter" name="newsletter">
+            <label for="newsletter">Je souhaite recevoir les offres et nouveautés de Pizza Mi par SMS/E-mail.</label>
+        </div>
+
+        <button type="submit">VALIDER MA PARTICIPATION</button>
+    </form>
+
+    <p class="prizes-mention">Tablette tactile, bons d'achats restaurants et commerces locaux à gagner !</p>
+</div>
+
+</body>
+</html>
