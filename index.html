@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeu Concours - 20 Ans Pizza Mi</title>
+    <title>Jeu Concours - 20 Ans PIZZA MI</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-green: #ffffff; /* Vert vif */
-            --dark-grey: #5DB52C;
+            --bg-green: #5DB52C; /* Votre vert principal */
             --white: #ffffff;
-            --text-muted: #b3b3b3;
+            --text-muted: rgba(255, 255, 255, 0.85); /* Blanc légèrement transparent pour la hiérarchie */
         }
 
         body {
@@ -21,37 +20,33 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            /* Image de fond appétissante (sombre pour faire ressortir le texte) */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1920&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            /* Fond uni vert clair */
+            background-color: var(--bg-green);
             color: var(--white);
         }
 
-        /* Effet Glassmorphism (verre fumé) pour le conteneur */
+        /* Effet Glassmorphism (verre fumé) adapté sur le fond vert */
         .container {
-            background: #5DB52C;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(0, 0, 0, 0.15); /* Fond légèrement assombri pour faire ressortir la carte */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgb(255, 255, 255);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             width: 90%;
             max-width: 550px;
-            border-top: 6px solid var(--primary-green);
-            border-bottom: 1px solid rgb(255, 255, 255);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         h1 {
             text-align: center;
-            color: var(--primary-green);
+            color: var(--white);
             margin: 0 0 5px 0;
             font-size: 2.5em;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 2px 10px rgba(57, 255, 20, 0.3);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         p.subtitle {
@@ -63,8 +58,8 @@
         }
 
         p.subtitle span {
-            color: var(--primary-green);
-            font-weight: 600;
+            font-weight: 800;
+            text-decoration: underline;
         }
 
         .form-group {
@@ -81,7 +76,7 @@
             letter-spacing: 1px;
         }
 
-        /* Design des champs de texte pour tablette */
+        /* Design des champs de texte */
         input[type="text"],
         input[type="email"],
         input[type="tel"] {
@@ -89,7 +84,7 @@
             padding: 16px;
             border: 2px solid transparent;
             border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.2);
             color: var(--white);
             font-size: 1.1em;
             font-family: 'Poppins', sans-serif;
@@ -98,14 +93,14 @@
         }
 
         input::placeholder {
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.6);
         }
 
         input:focus {
             outline: none;
-            border-color: var(--primary-green);
-            background-color: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+            border-color: var(--white);
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
         }
 
         /* Design personnalisé des cases à cocher */
@@ -138,19 +133,19 @@
             left: 0;
             height: 24px;
             width: 24px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 2px solid var(--text-muted);
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid var(--white);
             border-radius: 6px;
             transition: all 0.2s ease;
         }
 
         .checkbox-container:hover input ~ .checkmark {
-            border-color: var(--primary-green);
+            background-color: rgba(255, 255, 255, 0.3);
         }
 
         .checkbox-container input:checked ~ .checkmark {
-            background-color: var(--primary-green);
-            border-color: var(--primary-green);
+            background-color: var(--white);
+            border-color: var(--white);
         }
 
         .checkmark:after {
@@ -168,7 +163,7 @@
             top: 4px;
             width: 5px;
             height: 10px;
-            border: solid #000; /* V de validation en noir pour contraster sur le vert */
+            border: solid var(--bg-green); /* V de validation en vert pour contraster sur le blanc */
             border-width: 0 3px 3px 0;
             -webkit-transform: rotate(45deg);
             -ms-transform: rotate(45deg);
@@ -176,22 +171,22 @@
         }
 
         .checkbox-container a {
-            color: var(--primary-green);
-            text-decoration: none;
+            color: var(--white);
+            text-decoration: underline;
             font-weight: 600;
         }
 
         .checkbox-container a:hover {
-            text-decoration: underline;
+            text-decoration: none;
         }
 
-        /* Bouton de validation */
+        /* Bouton de validation inversé (Blanc texte vert) pour bien ressortir */
         button {
             width: 100%;
             padding: 18px;
             margin-top: 10px;
-            background-color: var(--primary-green);
-            color: #000;
+            background-color: var(--white);
+            color: var(--bg-green);
             border: none;
             border-radius: 10px;
             font-family: 'Poppins', sans-serif;
@@ -199,13 +194,13 @@
             font-weight: 800;
             cursor: pointer;
             transition: all 0.2s ease;
-            box-shadow: 0 5px 15px rgba(57, 255, 20, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-transform: uppercase;
         }
 
         button:active {
             transform: scale(0.97);
-            box-shadow: 0 2px 5px rgba(57, 255, 20, 0.3);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .prizes-mention {
